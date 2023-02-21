@@ -55,3 +55,7 @@ add_my_fruit = requests.get("https://fruityvice.com/api/fruit/"+ fruit_choice)
 streamlit.write('Thanks for adding ', fruit_choice)
 
 
+def insert_row_snowflake(new_fruit):
+    with my_cnx.cursor() as my_cur:
+        my_cur.execute("insert into fruit_load_list_values('" + my_cur.current() +"')")
+        return "Thanks for adding " + new_fruit
