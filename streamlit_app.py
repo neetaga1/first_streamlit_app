@@ -57,7 +57,7 @@ def insert_row_snowflake(new_fruit):
 fruit_choice = streamlit.text_input('What fruit would you like to add','jackfruit')
 add_my_fruit = requests.get("https://fruityvice.com/api/fruit/"+ fruit_choice)
 back_from_Add_function= insert_row_snowflake(fruit_choice)
-streamlit.write('Thanks for adding ', fruit_choice)
+streamlit.write(back_from_Add_function)
 
 
 
